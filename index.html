@@ -14,8 +14,9 @@
     <!-- SWIPER -->
     <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
     <script src="/js/observer.js" defer></script>
+    <script src="/js/main.js" defer></script>
   </head>
-  <body class="dark-theme">
+  <body class="dark-theme" onload="myStart()" style="visibility: hidden">
     <!-- HEADER -->
     <header id="header" class="header">
       <nav class="nav container">
@@ -80,7 +81,7 @@
             id="sky"
             data-src1="/img/forest-sky01-mobil.png"
             data-src2="/img/forest-sky01orion.png"
-            alt=""
+            src="/img/forest-sky01orion.png"
           />
 
           <!-- <div id="stars">
@@ -709,6 +710,11 @@
     <!-- SWIPER JS -->
     <script src="/js/swiper-bundle.min.js"></script>
 
-    <script src="/js/main.js" defer></script>
+    <script>
+      let myVar;
+      function myStart() {
+        myVar = setTimeout(showPage, 1000);
+      }
+    </script>
   </body>
 </html>

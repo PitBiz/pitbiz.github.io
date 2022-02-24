@@ -1,3 +1,35 @@
+function showPage() {
+  document.querySelector("body").style.visibility = "visible";
+
+  const sky = document.querySelector("#sky");
+  const mountains = document.querySelector("#mountain");
+
+  if (window.outerWidth < 700) {
+    mountains.src = mountains.dataset.src1;
+    sky.src = sky.dataset.src1;
+    console.log("page maly");
+    return;
+  }
+  mountains.src = mountains.dataset.src2;
+  sky.src = sky.dataset.src2;
+  console.log("page duzy");
+}
+window.addEventListener('resize', showPage);
+
+
+
+const parallax = document.querySelector('#parallax');
+const bg = document.querySelector('#sky');
+const moon = document.querySelector('#moon'),
+      homeSection  = document.querySelector('#home__section');
+//const road = document.querySelector('#road');
+const mountain = document.querySelector('#mountain');
+const textMain = document.querySelector('#text__main');
+const textDreams = document.querySelector('#text__dreams');
+const skyColor = document.querySelector('.sky__color');
+
+
+
 // MENU SHOW AND HIDE
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -282,6 +314,7 @@ const observerSections = new IntersectionObserver(section => {
   section.forEach(id => {
     const sectionId = id.target.getAttribute('id');
        if(id.isIntersecting) {
+      
     document.querySelector(`.nav__menu a[href*=` + sectionId + `]`).classList.add('active-link');
     return;
     }
@@ -354,30 +387,7 @@ themeButton.addEventListener('click', () => {
 })
 
 //PARALLAX
-const parallax = document.querySelector('#parallax');
-const bg = document.querySelector('#sky');
-const moon = document.querySelector('#moon'),
-      homeSection  = document.querySelector('#home__section');
-//const road = document.querySelector('#road');
-const mountain = document.querySelector('#mountain');
-const textMain = document.querySelector('#text__main');
-const textDreams = document.querySelector('#text__dreams');
-const skyColor = document.querySelector('.sky__color');
 
-
-function bgChange() {
-if (window.outerWidth < 700) {
-  mountain.src = mountain.dataset.src1;
-  bg.src = bg.dataset.src1;
-} else {
-  mountain.src = mountain.dataset.src2;
-  bg.src = bg.dataset.src2;
-}
-console.log('gora', mountain.src);
-}
-
-bgChange();
-window.addEventListener('resize', bgChange);
 
 //rozmiar fontu slowa Dream
 const cssObj = window.getComputedStyle(textDreams, null);
