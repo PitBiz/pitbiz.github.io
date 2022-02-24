@@ -127,6 +127,7 @@ skillsHeader.forEach(el =>{
 const tabs = document.querySelectorAll('[data-target]'),
       tabsReset = document.querySelectorAll('[data-content'),
       tabsContents = document.querySelectorAll('.qualification__sections'),
+      tabCV = document.querySelector('.qualification__header');
       tabWork = document.getElementById('work'),
       tabEducation = document.getElementById('education');
     
@@ -155,15 +156,18 @@ const tabs = document.querySelectorAll('[data-target]'),
         tabsContents[0].classList.add('qualification__active');
         tab.classList.add('qualification__active');
        
-  
+        const cssObjCV = window.getComputedStyle(tabCV, null);
                     
         if(tab.dataset.target ==='#work') {
           tabWork.dataset.content = "show";
           //rozmiar sekcji id=WORK
           const cssObjWork = window.getComputedStyle(tabWork, null);
           let idWork = cssObjWork.getPropertyValue('height');
-          document.documentElement.style.setProperty('--qualification-tab-height', idWork);
+          // document.documentElement.style.setProperty('--qualification-tab-height', idWork);
           
+          let idCV = cssObjCV.getPropertyValue('height');
+          document.documentElement.style.setProperty('--qualification-CV', idCV);
+          console.log("CV", idCV);
           return;
         }
         if(tab.dataset.target ==='#education') {
@@ -171,8 +175,11 @@ const tabs = document.querySelectorAll('[data-target]'),
           //rozmiar sekcji id=EDUCATION
           const cssObjEdu = window.getComputedStyle(tabEducation, null);
           let idEdu = cssObjEdu.getPropertyValue('height');
-          document.documentElement.style.setProperty('--qualification-tab-height', idEdu);
+          // document.documentElement.style.setProperty('--qualification-tab-height', idEdu);
           
+          let idCV = cssObjCV.getPropertyValue('height');
+          document.documentElement.style.setProperty('--qualification-CV', idCV);
+          console.log("CV", idCV);
           return;
         }
       } 

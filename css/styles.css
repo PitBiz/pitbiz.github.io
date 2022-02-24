@@ -14,7 +14,7 @@
   --parallax-top-before: 0px;
   --svg-height: 100%;
   --svg-width: 100%;
-  --qualification-tab-height: 10px;
+  --qualification-CV: auto;
 
   /*colors*/
   --hue-color: 265;
@@ -146,7 +146,7 @@ a {
   cursor: pointer;
 }
 img {
-  display: block;
+  /* display: block; */
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
@@ -185,7 +185,7 @@ img {
   justify-content: center;
   align-content: center;
   /* /* border: 1px solid red; */
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 .grid {
   display: grid;
@@ -216,7 +216,7 @@ img {
   top: calc(var(--parallax-top-before) / 1.4);
   left: 0;
   width: 100%;
-  height: 81%;
+  height: 115%;
   margin: 0;
   padding: 0;
   background-color: var(--body-color);
@@ -245,7 +245,7 @@ img {
   /* background-color: #22d3ee; */
   background-repeat: repeat;
   mix-blend-mode: multiply;
-  height: 81%;
+  height: 100%;
   width: 100%;
   z-index: 2;
 }
@@ -341,11 +341,8 @@ img {
   display: grid;
   place-items: center;
   justify-content: center;
-  height: auto;
-  /* display: block; */
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid red;
 }
 #parallax > img {
   position: absolute;
@@ -485,7 +482,7 @@ canvas {
   display: block;
   height: var(--parallax-height);
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin: 0;
   padding: 0;
   z-index: 3;
@@ -633,11 +630,11 @@ canvas {
 .button--link {
   padding: 0;
   background-color: transparent;
-  color: var(--first-color);
+  color: var(--text-accent);
 }
 .button--link:hover {
   background-color: transparent;
-  color: var(--first-color-alt);
+  color: var(--first-color-lighter);
 }
 /* ABOUT */
 .about {
@@ -817,6 +814,7 @@ canvas {
   background-size: cover;
   background-position: 20% 0%;
   height: 1100px;
+  /* 1100px; */
   /* calc(400px + var(--qualification-tab-height)); */
   width: 100%;
   mix-blend-mode: multiply;
@@ -850,10 +848,10 @@ canvas {
 /* poniżej 360px */
 @media screen and (max-width: 360px) {
   .qualification__bg {
-    height: 1000px;
+    height: 900px;
   }
   .qualification {
-    height: 1000px;
+    height: 900px;
   }
 }
 
@@ -902,17 +900,17 @@ canvas {
 }
 .text-pyramids::after {
   visibility: hidden;
-  content: "I'm still trying to figure out... Who build the pyramids?";
+  content: "I'm still trying to figure out... Who built the pyramids?";
   position: absolute;
   top: 0;
   left: 0;
   padding: 0.3rem 0.5rem 0.5rem 1.5rem;
   border-radius: 15px;
   background-color: rgba(44, 15, 51, 0.8);
-  width: 100px;
+  width: 250px;
   height: auto;
   font-family: "Caveat", cursive;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: white;
   z-index: -1;
   box-shadow: 1px 1px 10px 1px black;
@@ -1026,7 +1024,8 @@ h2.qualification__title {
 .services {
   height: 100%;
   z-index: 4;
-  margin-top: 10rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 .services__container {
   gap: 1.5rem;
@@ -1052,7 +1051,7 @@ h2.qualification__title {
 .services__icon {
   display: block;
   font-size: 1.5rem;
-  color: var(--first-color);
+  color: var(--text-accent);
   margin-bottom: var(--mb-0-5);
 }
 .services__title {
@@ -1314,7 +1313,6 @@ h2.qualification__title {
 
 /* footer */
 .footer {
-  padding-top: 2rem;
   bottom: 0;
   text-align: left;
   z-index: 9999;
@@ -1340,6 +1338,7 @@ h2.qualification__title {
 .footer__container {
   row-gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
+  padding-left: 2rem;
 }
 
 .footer__bg {
